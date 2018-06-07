@@ -9,10 +9,12 @@ public class GreetingController {
 
     int result[];
     String output="(";
+    int i=1, loopCount =0;
 
     @RequestMapping("/random")
     public String greeting(@RequestParam(value="limit") int number) {
         random(number);
+        i=1; loopCount=0;
         return output;
     }
 
@@ -20,9 +22,10 @@ public class GreetingController {
 
 
 
-    int i=1, loopCount =0;
+
     private void random(int limit){
-       // Random r=new Random();
+        output="(";
+        // Random r=new Random();
         result =new int[limit];
 
         result[0]=1;
