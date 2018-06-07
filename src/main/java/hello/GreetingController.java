@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingController {
 
     int result[];
+    String output="";
 
     @RequestMapping("/random")
     public String greeting(@RequestParam(value="limit") int number) {
@@ -46,6 +47,7 @@ public class GreetingController {
         System.out.println(loopCount);
 
         for(int f = 0; f< result.length; f++){
+            output+=String.valueOf(f)+"--"+String.valueOf(result[f])+"\n";
             System.out.println(String.valueOf(f)+"--"+String.valueOf(result[f]));
         }
 
