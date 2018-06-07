@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingController {
 
     int result[];
-    String output="";
+    String output="(";
 
     @RequestMapping("/random")
     public String greeting(@RequestParam(value="limit") int number) {
         random(number);
-        return String.valueOf(loopCount);
+        return output;
     }
 
 
@@ -47,9 +47,11 @@ public class GreetingController {
         System.out.println(loopCount);
 
         for(int f = 0; f< result.length; f++){
-            output+=String.valueOf(f)+"--"+String.valueOf(result[f])+"\n";
+            output+=String.valueOf(result[f])+")  (";
             System.out.println(String.valueOf(f)+"--"+String.valueOf(result[f]));
         }
+
+        output+=") // *LOOPCOUNT* = "+loopCount;
 
     }
 
