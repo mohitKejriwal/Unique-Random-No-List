@@ -13,8 +13,9 @@ public class GreetingController {
 
     @RequestMapping("/random")
     public String greeting(@RequestParam(value="limit") int number) {
+        i = 1;
+        loopCount = 0;
         random(number);
-        i=1; loopCount=0;
         return output;
     }
 
@@ -54,7 +55,7 @@ public class GreetingController {
             System.out.println(String.valueOf(f)+"--"+String.valueOf(result[f]));
         }
 
-        output+=") // *LOOPCOUNT* = "+loopCount;
+        output += " // *LOOPCOUNT* = " + loopCount + " )";
 
     }
 
