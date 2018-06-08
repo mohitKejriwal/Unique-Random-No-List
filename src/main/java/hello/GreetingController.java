@@ -10,16 +10,16 @@ public class GreetingController {
     int result[];
     String output="(";
     int i=1, loopCount =0;
+    long time;
 
     @RequestMapping("/random")
     public String greeting(@RequestParam(value="limit") int number) {
         i = 1;
         loopCount = 0;
+        time = System.nanoTime();
         random(number);
         return output;
     }
-
-
 
 
 
@@ -42,7 +42,7 @@ public class GreetingController {
         result[0]=d;
 
 
-        temp=1+(int)(Math.random()*(53));
+        temp = 1 + (int) (Math.random() * (limit - 1));
         d= result[temp];
         result[temp]= result[limit-1];
         result[limit-1]=d;
@@ -55,7 +55,7 @@ public class GreetingController {
             System.out.println(String.valueOf(f)+"--"+String.valueOf(result[f]));
         }
 
-        output += " // *LOOPCOUNT* = " + loopCount + " )";
+        output += " // *LOOPCOUNT* = " + loopCount + " )" + " // *Time taken* = " + String.valueOf((System.nanoTime() - time) / 1000000f) + " milli sec";
 
     }
 
