@@ -1,6 +1,5 @@
 # Unique-Random-No-List
 This spring boot project is built using java. The aim of this project is to generate a list of "unique" random numbers with the least loop counts.
-Many complex algoriths are available on google for you to refer but in my algo you ll find pretty simple steps to achieve the goal.
 
 It goes like this,-- 
   *Step 1*- Generate a random number between 1 and the limit given by user...
@@ -9,9 +8,9 @@ It goes like this,--
   
   *Step 3*- Generate a random number between Node and the limit given by user, i.e. the remaining half and then keep on generating nodes and random numbers between them...
   
-At last when all the loops will reach to their end you ll have a list of random numbers between 1 and the limit. List will include all the numbers between 1 and limit only once.
-This is done using recursive function which generates a Node and calls itself with new values of limits i.e. Nodes.
-Just read RandomController java class to get the logic. 
+At last when all the loops will reach to their end you'll have a list of random numbers between 1 and the limit. List will include all the numbers between 1 and limit only once.
+This is done using recursive function which generates a Node and calls itself with new values of limits i.e. New Nodes.
+Just read `RandomController` java class to get the logic. 
 
 Also you can hit this api ( https://unique-random-list.herokuapp.com/random?limit=20 ) hosted on heroku.com 
 
